@@ -45,25 +45,20 @@ Additional handwritten notes and raw screenshot logs are included in the `notes/
 
 4. Wait for the **CIW (Command Interpreter Window)** and other Virtuoso windows to appear.
 
-```markdown
+<img width="1491" height="905" alt="Screenshot 2026-04-25 002055" src="https://github.com/user-attachments/assets/eea30fad-b3d5-475e-8317-38564253c0bb" />
 
-```
+<img width="1674" height="915" alt="Screenshot 2026-04-25 002613" src="https://github.com/user-attachments/assets/4a07476a-f153-4142-a585-9501cec3d58d" />
 
 ---
 
 ### 3.2 Creating the Design Library (`Vansh_lib`)
 
-1. From the CIW, open **Tools → Library Manager**.
-2. In Library Manager, go to **File → New → Library…**.
-3. Fill in the fields:
+1. In Library Manager, go to **File → New → Library…**.
+2. Fill in the fields:
    - **Library Name:** `Vansh_lib`
    - **Path:** Choose a suitable location (default home path is fine).
-4. In the technology options, choose **Attach to an existing technology library**.
-5. Click **OK**.
-
-```markdown
-
-```
+3. In the technology options, choose **Attach to an existing technology library**.
+4. Click **OK**.
 
 ---
 
@@ -77,9 +72,9 @@ Additional handwritten notes and raw screenshot logs are included in the `notes/
 
 The CIW log should show a message that `Vansh_lib` has been successfully attached to `gpdk090`.
 
-```markdown
+<img width="1687" height="961" alt="Screenshot 2026-04-25 003719" src="https://github.com/user-attachments/assets/05129c2b-3d66-40c5-b624-35976bd59b97" />
 
-```
+<img width="905" height="230" alt="Screenshot 2026-04-25 005013" src="https://github.com/user-attachments/assets/b5d5491b-ba92-490c-96a9-99da6c125120" />
 
 ---
 
@@ -90,9 +85,18 @@ The CIW log should show a message that `Vansh_lib` has been successfully attache
    - Create a new cell, e.g. **Cell Name:** `inverter`
    - **View:** `schematic`
 2. The **Virtuoso Schematic Editor** opens.
+  <img width="1482" height="977" alt="Screenshot 2026-04-25 005313" src="https://github.com/user-attachments/assets/f2072572-36c0-4832-ad03-b5c8586ebd20" />
+  
+<img width="1482" height="977" alt="Screenshot 2026-04-25 005313" src="https://github.com/user-attachments/assets/f2072572-36c0-4832-ad03-b5c8586ebd20" />
+
 3. Use **Create → Instance** to place:
    - One **PMOS** device from the gpdk090 library.
    - One **NMOS** device from the gpdk090 library.
+    <img width="1512" height="924" alt="Screenshot 2026-04-25 122710" src="https://github.com/user-attachments/assets/9f29f49e-1a8b-4e7a-a6cd-92e9b1397cb3" />
+    
+    <img width="1487" height="934" alt="Screenshot 2026-04-25 123539" src="https://github.com/user-attachments/assets/a9065f6c-2ec3-4ba3-a59b-c49bb7dade56" 
+      
+    <img width="1513" height="941" alt="Screenshot 2026-04-25 123839" src="https://github.com/user-attachments/assets/243daaad-6f31-4ca5-9c6d-fb3bf0679cf5" />
 4. Connect them as a standard CMOS inverter:
    - PMOS source → VDD.
    - PMOS drain → output node (`vout`).
@@ -104,15 +108,15 @@ The CIW log should show a message that `Vansh_lib` has been successfully attache
    - `vout` (output)
    - `vdd` (supply)
    - `gnd` (ground)
+<img width="1476" height="908" alt="Screenshot 2026-04-25 133443" src="https://github.com/user-attachments/assets/07dfb68e-4a8d-4216-b967-36924d14b3d5" />
+
+<img width="1498" height="868" alt="Screenshot 2026-04-26 181314" src="https://github.com/user-attachments/assets/c3c8a896-408d-43f3-9bb9-e793982750e6" />
+
 6. **Check and Save** the schematic.
 
 Device sizing (example):
 - NMOS: length ≈ 100 nm, width ≈ 1 µm.
 - PMOS: sized appropriately to achieve symmetrical switching (for learning, equal widths are fine).
-
-```markdown
-
-```
 
 ---
 
@@ -128,11 +132,11 @@ Device sizing (example):
    - Right: `vout`
 5. Click **OK**, then **save** the symbol.
 
+<img width="1480" height="972" alt="Screenshot 2026-04-26 181526" src="https://github.com/user-attachments/assets/71202d4f-db22-4ef3-b65e-bebb673f5729" />
+
+<img width="1498" height="922" alt="Screenshot 2026-04-26 182010" src="https://github.com/user-attachments/assets/7cd7ad65-8a2f-4105-ace5-c1ac6e9a76e2" />
+
 This symbol will now be used in a **test circuit** to verify the inverter.
-
-```markdown
-
-```
 
 ---
 
@@ -157,9 +161,8 @@ Instead of a separate “testbench tool”, a **test circuit schematic** is crea
    - `vout` pin to a probe and optional load.
 6. Label the nets clearly (`vin`, `vout`, `vdd`, `gnd`) and **Check and Save** the test circuit schematic.
 
-```markdown
+<img width="1497" height="927" alt="Screenshot 2026-04-26 185300" src="https://github.com/user-attachments/assets/24ab8b20-4ded-4986-b543-78b335992eab" />
 
-```
 
 This schematic is the **test ckt** used to test the inverter symbol.
 
@@ -174,6 +177,9 @@ All simulations are run from the **test circuit schematic** using ADE L and the 
 1. With the `inverter_test` (or your chosen test-circuit cell) schematic open:
    - Go to **Launch → ADE L**.
 2. Ensure the **Simulator** is set to **Spectre**.
+
+<img width="1591" height="934" alt="Screenshot 2026-04-26 185427" src="https://github.com/user-attachments/assets/a79e9e49-7ebb-4aab-8bdf-38e85a0bef93" />
+
 
 ---
 
@@ -200,9 +206,9 @@ Initially, a stop time of **500 ms** was used, which is extremely large for a si
 4. Click **OK**.
 5. In the Outputs panel, choose `vin` and `vout` to be plotted/saved.
 
-```markdown
+<img width="1507" height="908" alt="Screenshot 2026-04-26 185617" src="https://github.com/user-attachments/assets/7798030d-a0bf-4f64-bc8d-d9347125348c" />
 
-```
+<img width="1491" height="915" alt="Screenshot 2026-04-26 190928" src="https://github.com/user-attachments/assets/6f752830-09f4-4f97-9364-b4933cdd25af" />
 
 ---
 
@@ -253,9 +259,7 @@ DC analysis is used to obtain the **VTC** of the inverter by slowly sweeping the
 
 The curve should show the inverter transitioning from high to low as the input rises from 0 V to 1.8 V, giving the typical S-shaped VTC.
 
-```markdown
-
-```
+<img width="1505" height="900" alt="Screenshot 2026-04-26 191836" src="https://github.com/user-attachments/assets/285979eb-4814-4369-93a9-9a04b72ddff4" />
 
 ---
 
@@ -265,14 +269,17 @@ The curve should show the inverter transitioning from high to low as the input r
   - The inverter output correctly inverts the pulse at its input.
   - Using **200 ns** as the stop time is sufficient to see multiple switching cycles without wasting simulation time.
   - Initial use of **500 ms** stop time demonstrated why very large time windows should be avoided for small digital cells.
+  - 
+<img width="545" height="737" alt="Screenshot 2026-04-26 192907" src="https://github.com/user-attachments/assets/ddf89a02-fe60-4c73-be94-b47618bf403e" />
+
+<img width="463" height="560" alt="Screenshot 2026-04-26 193608" src="https://github.com/user-attachments/assets/520f06cc-fd32-46a6-b39f-b72f9f66eb77" />
 
 - **DC Analysis:**
   - The VTC confirms that when the input is low, the output is high, and vice versa.
   - The switching region (where output transitions) is roughly around the mid-supply region (close to 0.7–0.9 V for a 1.8 V supply, depending on transistor sizing).
 
-```markdown
+<img width="1253" height="795" alt="Screenshot 2026-04-26 201200" src="https://github.com/user-attachments/assets/bf4b4c43-1054-4689-bb38-7780dcfd7f6a" />
 
-```
 
 - **Key learning points:**
   - How to create a custom library and attach a technology file in Cadence.
