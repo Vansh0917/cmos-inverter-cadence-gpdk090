@@ -18,7 +18,7 @@ The work is done inside a VMware Linux environment, starting from launching Virt
   - DC sweep to obtain the **Voltage Transfer Characteristic (VTC)**.
   - Transient analysis with a pulse input to verify switching behavior.
 
-Additional handwritten notes and raw screenshot logs are included in the `notes/` folder for reference.
+Additional handwritten notes and raw screenshot logs are included in the `NOTES/` folder for reference.
 
 ---
 
